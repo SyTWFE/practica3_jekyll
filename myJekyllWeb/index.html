@@ -5,21 +5,24 @@ layout: default
 <div class="container">
 
   <div>
-    <img src="img/ull.png" alt="Unsplashed background img 1"> 
+    <img class="img" src="img/ull.png" alt="Unsplashed background img 1"> 
   </div>
 
-  <div class="row">
+  <div class="contenedor">
     {% for tema in site.character limit: 4%}
-      <div class="col s4">
-        <ver-tema onclick="ver_tema('{{tema.title}}')" img ="{{tema.image}}" title="{{tema.title}}" description="{{tema.description}}" link="{{tema.link}}}"></ver-tema>  
+      <div class="contenido">
+        <div class="subcontainer1">
+          <img class="img" src="{{tema.image}}">
+          <h2 class="subtitulo">{{tema.title}}</h2>
+        </div>
+        <div class="subcontainer2">
+          <p class="texto">{{tema.description}}</p>
+        </div>
+        <div class="subcontainer3">
+          <a class="ref" href="{{tema.link}}}">Enlace a otra página</a>
+        </div>
       </div>
     {% endfor %}
   </div>
-
-  <div id="eleccion" class="eleccion">
-    <p id="text-select" class="tema_select">Ver información del tema: </p>
-  </div>
-
-  <script type="text/javascript" src="./assets/js/temas.js"></script>
 
 </div>

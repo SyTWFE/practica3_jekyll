@@ -76,27 +76,12 @@ li {
     }
 }
 
-/**
- * Links
- */
-a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
-}
 
 /**
  * Wrapper
  */
 .wrapper {
+    background-color: darkmagenta;
     max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
     max-width:         calc(800px - (#{$spacing-unit} * 2));
     margin-right: auto;
@@ -164,6 +149,7 @@ cursor: pointer;
  * Site footer
  */
  .site-footer {
+    background-color: darkmagenta;
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }

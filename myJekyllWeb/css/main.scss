@@ -4,10 +4,6 @@
 
 @charset "utf-8";
 
-
-
-
-// Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -26,16 +22,6 @@ $grey-color-dark:  darken($grey-color, 25%);
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
-
-
-// Using media queries with like this:
-// @include media-query($palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -46,27 +32,78 @@ $on-laptop:        800px;
 @import "basejekyll";
 @import "variables";
 
-.container{
-    font: $font;
-    font-family: $fontfamily;
-    width: $width_div;
-    background-color: $main_color;
-    border: black 1px solid;
-    @include position_center(column);
+//Navigation Bar
+.ull {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:darkmagenta ;
+    font-size: 20px;
 }
 
-.navbar{
+.lii {
+    float: left;
+}
+
+.lii a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.lii a:hover:not(.active) {
     background-color: purple;
 }
 
-.titulo{
-    text-align: right;
+.active {
+    background-color: rgb(107, 1, 107);
 }
 
-.paginas{
-    text-align: left;
+//Contenido
+.contenedor{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+.contenido{
+    width:20%;
+    float:left;
+    margin: 10px;
+    border: 4px solid purple;
+}
 
+.img{
+    display:block;
+    margin:auto;
+}
+.subtitulo{
+    color: black;
+    text-shadow: black 2px 2px 4px;
+    font-weight: normal;
+    font-size: 35px;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    text-align: center;
+    }
 
+.texto{
+    font-weight: normal;
+    font-size: 20px;
+    margin: auto;
+    font-family: $base-font-family;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+@for $i from 1 through 3{
+    .#{subcontainer}#{$i}{
+        @include contentdiv
+    }
+}
 
