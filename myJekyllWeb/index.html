@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <div>
+    <img src="img/ull.png" alt="Unsplashed background img 1"> 
+  </div>
+
+  <div class="row">
+    {% for tema in site.character limit: 4%}
+      <div class="col s4">
+        <ver-tema onclick="ver_tema('{{tema.title}}')" img ="{{tema.image}}" title="{{tema.title}}" description="{{tema.description}}" link="{{tema.link}}}"></ver-tema>  
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="eleccion" class="eleccion">
+    <p id="text-select" class="tema_select">Ver información del tema: </p>
+  </div>
+
+  <script type="text/javascript" src="./assets/js/temas.js"></script>
+
+</div>

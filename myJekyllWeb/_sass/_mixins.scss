@@ -1,0 +1,18 @@
+@mixin encabezados($color, $size, $shadow){
+    @if($shadow){
+        text-shadow: black 6px 6px 8px;
+    }
+    font: $font;
+    font-family: $fontfamily;
+    color: $color;
+    font-size: $size;        
+    text-align: center;    
+}
+
+@mixin position_center($position) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $position;
+    margin: auto;
+}
