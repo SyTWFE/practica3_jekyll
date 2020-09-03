@@ -1,11 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const run = require('gulp-run'); 
-const gutil = require('gulp-util');
 const browserSync = require('browser-sync').create();
 
 const siteRoot = '_site';
-const cssFiles = '_css/**/*.?(s)css';
 const shellCommand = 'bundle exec jekyll build --config _config.yml';
 
 
@@ -18,7 +16,7 @@ gulp.task('sass', () => {
 gulp.task('build:jekyll',()=> {    
     return gulp.src('.', {allowEmpty: true})
       .pipe(run(shellCommand))
-      .on('error', gutil.log);
+      .on('error', console.log);
   });
 
 gulp.task('serve', () => {
@@ -32,3 +30,4 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', gulp.series(['build:jekyll','sass','serve']));
+
